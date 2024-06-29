@@ -26,8 +26,9 @@ body {
         font-size: smaller;
     }
     
-    #secondNav a {
-        font-size: 1px;
+    #secondNav .nav-link {
+        font-size: 0.75em;
+
     }
 }
 
