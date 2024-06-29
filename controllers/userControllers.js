@@ -41,7 +41,7 @@ module.exports.userPage = (req, res) => {
 module.exports.tobeProduction = async (req, res) => {
     const { id } = req.params;
     await User.findByIdAndUpdate(id, { isProductionHouse: true });
-    res.redirect("users/user");
+    res.redirect(`/users/${id}`);
 }
 
 module.exports.logout = (req, res, next) => {
