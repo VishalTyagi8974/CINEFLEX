@@ -25,6 +25,10 @@ body {
     #catogoriesNavBar .nav-link {
         font-size: smaller;
     }
+    
+    #secondNav a {
+        font-size: 1px;
+    }
 }
 
 #catogoriesNavBar .nav-link {
