@@ -1,0 +1,14 @@
+<% layout('layouts/boilerplate') %>
+    <div class="container-fluid">
+        <%- include("../partials/secondNav") %>
+
+            <h1>
+                <%=category %>
+            </h1>
+
+            <div class="container-fluid d-flex justify-content-center align-items-center flex-wrap">
+                <% for (let movie of movies){%>
+                    <%- include("../partials/movieCard",{movie}) %>
+                        <% } %>
+            </div>
+    </div>

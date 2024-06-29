@@ -1,0 +1,116 @@
+<% layout('layouts/boilerplate') %>
+    <link rel="stylesheet" href="/stylesheets/indexpage.css">
+    <div class="container-fluid">
+        <%- include("../partials/secondNav") %>
+            <div class="m-2">
+                <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel"
+                    data-bs-interval="2000">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
+                            class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <% for (let i=1; i < crousalMovies.length; i++) { %>
+                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="<%= i %>"
+                                aria-label="Slide <%= i + 1 %>"></button>
+                            <% } %>
+                    </div>
+                    <div class="carousel-inner" style="height: 500px;">
+                        <div class="carousel-item active" style="height: 440px;color: white;">
+                            <div class="d-flex justify-content-center flex-column">
+                                <img class="d-block mx-auto" style="height: 290px; max-width: 100%;"
+                                    src="<%= crousalMovies[0].poster && crousalMovies[0].poster.url ? crousalMovies[0].poster.url : 'https://images.unsplash.com/photo-1560109947-543149eceb16?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' %>"
+                                    alt="Default Image">
+
+                                <h5 class="text-center mt-2 ">
+                                    <%= crousalMovies[0].title %>
+                                </h5>
+                                <p class="text-center" style="font-size: 0.8em;">
+                                    <%= crousalMovies[0].description %>
+                                </p>
+                                <a href="/movies/<%=crousalMovies[0]._id%>" class="align-self-center btn btn-danger"
+                                    style="width: 200px;">Watch Now</a>
+
+                            </div>
+                        </div>
+                        <% for (let i=1; i < crousalMovies.length; i++) { %>
+                            <div class="carousel-item" style="height: 440px; color: white;">
+                                <div class="d-flex justify-content-center flex-column">
+                                    <img class="d-block mx-auto" style="height: 290px; max-width: 100%;"
+                                        src="<%= crousalMovies[i].poster && crousalMovies[i].poster.url ? crousalMovies[i].poster.url : 'https://images.unsplash.com/photo-1560109947-543149eceb16?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' %>"
+                                        alt="Default Image">
+
+                                    <h5 class="text-center mt-2">
+                                        <%= crousalMovies[i].title %>
+                                    </h5>
+                                    <p class="text-center " style="font-size: 0.8em;">
+                                        <%= crousalMovies[i].description %>
+                                    </p>
+                                    <a href="/movies/<%=crousalMovies[i]._id%>" class="align-self-center btn btn-danger"
+                                        style="width: 200px;">Watch Now</a>
+
+                                </div>
+                            </div>
+                            <% } %>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+            <div class="container my-4">
+                <h2>
+                    <%=random2MovieCats[0][0].genres %>
+                </h2>
+                <button class="scroll-button left" id="upperLeft"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                        height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0" />
+                    </svg></button>
+                <div class="scroll-container" id="upperScrollDiv">
+                    <div class="scroll-content">
+                        <% for (let mov of random2MovieCats[0]) {%>
+                            <a href="/movies/<%=mov._id%>"><img
+                                    src="<%= mov.poster && mov.poster.url ? mov.poster.url : 'https://images.unsplash.com/photo-1560109947-543149eceb16?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' %>"
+                                    style="width: 150px; height: 200px ;" alt=""></a>
+                            <%} %>
+                    </div>
+                </div>
+                <button class="scroll-button right" id="upperRight"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                        height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />
+                    </svg></button>
+            </div>
+            <div class="container mb-4">
+                <h2>
+                    <%=random2MovieCats[1][0].genres %>
+                </h2>
+                <button class="scroll-button left" id="lowerLeft"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                        height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0" />
+                    </svg></button>
+                <div class="scroll-container" id="lowerScrollDiv">
+                    <div class="scroll-content">
+                        <% for (let mov of random2MovieCats[1]) {%>
+                            <a href="/movies/<%=mov._id%>"><img
+                                    src="<%= mov.poster && mov.poster.url ? mov.poster.url : 'https://images.unsplash.com/photo-1560109947-543149eceb16?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' %>"
+                                    style="width: 150px; height: 200px ;" alt=""></a>
+                            <%} %>
+                    </div>
+                </div>
+                <button class="scroll-button right" id="lowerRight"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                        height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />
+                    </svg></button>
+            </div>
+    </div>
+
+    <script src="/javascripts/script.js"></script>

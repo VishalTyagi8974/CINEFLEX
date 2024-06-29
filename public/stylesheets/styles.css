@@ -1,0 +1,203 @@
+body {
+    background: #8E0E00;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #1F1C18, #8E0E00);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #1F1C18, #8E0E00);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+#navbar {
+    background: #232526;
+    z-index: 9999;
+}
+
+#secondNav {
+    z-index: 9999
+}
+
+@media (max-width:550px) {
+    #searchForm {
+        width: 10.5rem;
+    }
+
+    #catogoriesNavBar .nav-link {
+        font-size: smaller;
+    }
+}
+
+#catogoriesNavBar .nav-link {
+    padding: 0.5rem 0.7rem;
+    color: white;
+    border: 1px solid #ffb703;
+    margin: 0.5rem;
+
+}
+
+#catogoriesNavBar .dropdown-item {
+    color: white;
+}
+
+#catogoriesNavBar .dropdown-item:hover {
+    background-color: #faa307;
+}
+
+#categoryDropdown {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-height: 50vh;
+    width: 100%;
+}
+
+h1 {
+    color: white;
+}
+
+.carousel-caption {
+    position: absolute;
+    left: auto;
+    bottom: 0;
+}
+
+.carousel-item {
+    position: relative;
+}
+
+.loginGo {
+    background-color: #EA4335;
+    font-weight: 500;
+    color: white;
+}
+
+.loginGo:hover,
+.loginGo:active {
+    background-color: #d91604;
+}
+
+
+#createFormDiv {
+    color: white;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("https://images.unsplash.com/photo-1614679967638-fe153775eff6?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-position: center;
+    background-size: cover;
+    border-radius: 15px;
+}
+
+#editFormDiv {
+    color: white;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("https://images.unsplash.com/photo-1539711771763-098409f795f1?q=80&w=1861&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-position: center;
+    background-size: cover;
+    border-radius: 15px;
+}
+
+#video {
+    width: 100%;
+    height: 16/9;
+
+}
+
+/* @media (min-width:900px) {
+    #video {
+        margin-top: 1em;
+        width: 70%;
+    }
+} */
+
+#showPageDes {
+    color: white;
+    background: #000000;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #434343, #000000);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #434343, #000000);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    padding: 1rem;
+    margin-bottom: 1rem;
+    width: 100vw;
+
+
+}
+
+#giveReview,
+#allReviews,
+.reviewCard {
+    color: white;
+    background: #000000;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #434343, #000000);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #434343, #000000);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border: none;
+
+}
+
+.reviewCard a {
+    color: white;
+    background-color: transparent;
+    border: none;
+}
+
+#showPageDes span {
+    color: #c51202;
+    font-weight: 600;
+    font-size: large;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent background */
+    z-index: 9999;
+    overflow-y: auto;
+    /* Enable scrolling within the overlay */
+}
+
+.spinner {
+    position: absolute;
+    top: 50vh;
+    left: 47vw;
+    /* transform: translate(-50%, -50%); */
+    z-index: 10000;
+    /* Ensure spinner is above overlay */
+}
+
+.blurred {
+    filter: blur(5px);
+    /* Apply blur effect to main content */
+}
+
+/* Additional styles for the main content */
+#main-content {
+    position: relative;
+    /* Ensure main content is not obscured */
+    z-index: 9998;
+    /* Ensure main content is below overlay */
+}
+
+
+body,
+p,
+a,
+form,
+button {
+    font-family: "Sunflower", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+h1,
+h5 {
+    font-family: "Sunflower", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}

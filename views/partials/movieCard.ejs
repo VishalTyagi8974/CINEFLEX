@@ -1,0 +1,13 @@
+<div class="card p-2 m-3" style="width: 340px; height: 550px; position: relative;">
+    <img src="<%= movie.poster && movie.poster.url ? movie.poster.url : 'https://images.unsplash.com/photo-1560109947-543149eceb16?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' %>"
+        class="imageElement" alt="Default Image">
+    <div class="card-body" style="background-color:#ffffff88; position: absolute; bottom: 0;">
+        <h5 class="card-title">
+            <%= movie.title %>
+        </h5>
+        <p class="card-text">
+            <%= movie.description %>
+        </p>
+        <a href="/movies/<%= movie._id %>" class="btn btn-danger">Watch Now</a>
+    </div>
+</div>

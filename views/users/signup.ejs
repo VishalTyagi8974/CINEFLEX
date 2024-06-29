@@ -1,0 +1,47 @@
+<% layout("layouts/boilerplate") %>
+    <section class="contsiner d-flex justify-content-center align-items-center mb-2">
+        <div class="row mt-1">
+            <div class="col-md-6 offset-md-3 col-xl-4 offset-xl-4">
+                <div class="card shadow">
+                    <img class="card-img-top"
+                        src="https://images.unsplash.com/photo-1543536448-d209d2d13a1c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        crossorigin="anonymous">
+                    <div class="card-body">
+                        <h5 class="card-title">Sign Up</h5>
+                        <a href="/auth/google" class="btn w-100 mb-1 mt-1 loginGo">Sign Up with Google</a>
+
+                        <p style="text-align: center;" class="mb-0">Or</p>
+                        <form action="/signup" class="needs-validation" method="post" novalidate>
+                            <label for="username" class="form-label">Username</label>
+                            <div class="mb-3">
+                                <input type="text" name="username" id="username" class="form-control" autofocus
+                                    required>
+                                <div class="valid-feedback">Looks Good!</div>
+                            </div>
+
+                            <label for="email" class="form-label">Email</label>
+                            <div class="input-group mb-3">
+                                <input type="email" name="email" id="email" class="form-control" required>
+                                <div class="valid-feedback">Looks Good!</div>
+                            </div>
+
+                            <label for="password" class="form-label">Password</label>
+                            <div class="mb-3">
+                                <input type="password" name="password" id="password" class="form-control" required>
+                                <div class="valid-feedback">Looks Good!</div>
+                            </div>
+                            <div class="form-check form-switch mt-2 mb-3">
+                                <input class="form-check-input" type="checkbox" name="isProductionHouse" role="switch"
+                                    id="flexSwitchCheckDefault">
+                                <label class="form-check-label" for="flexSwitchCheckDefault">Signing up for
+                                    Production?</label>
+                            </div>
+
+                            <button class="btn btn-success w-100" type="submit">Sign Up</button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>

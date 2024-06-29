@@ -1,0 +1,95 @@
+<% layout("layouts/boilerplate") %>
+    <div class="container-fluid">
+        <div class="row mt-3">
+            <h1 class="m-auto text-center">Edit Movie</h1>
+
+            <form action="/movies/<%=movie._id%>?_method=patch" class="my-4 col-md-6 offset-md-3 needs-validation p-4"
+                id="editFormDiv" method="post" enctype="multipart/form-data" novalidate>
+                <label for="title" class="form-label">Title</label>
+                <div class="mb-3">
+                    <input type="text" name="title" id="title" value="<%=movie.title %>" class="form-control" required>
+                    <div class="valid-feedback">Looks Good!</div>
+                </div>
+
+                <label for="description" class="form-label">Description</label>
+                <div class="mb-3">
+                    <textarea name="description" id="description" rows="4" class="form-control"
+                        required><%=movie.description %></textarea>
+                    <div class="valid-feedback">Looks Good!</div>
+                </div>
+                <div class="mb-3">
+                    <label for="description" for="ageRating" class="form-label">Age Rating</label>
+                    <select class="form-select" name="ageRating" id="ageRating" aria-label="Default select example">
+                        <option <%=movie.ageRating==="" ? "selected" : "" %> value="">Select Age Rating</option>
+                        <option value="U" <%=movie.ageRating==="U" ? "selected" : "" %>>U</option>
+                        <option value="UA" <%=movie.ageRating==="UA" ? "selected" : "" %>>UA</option>
+                        <option value="A" <%=movie.ageRating==="A" ? "selected" : "" %>>A</option>
+                    </select>
+
+                    <div class="valid-feedback">Looks Good!</div>
+                </div>
+                <div class="mb-3">
+                    <label for="genres" class="form-label">Genre</label>
+                    <select class="form-select" id="genres" name="genres" aria-label="Default select example">
+                        <option <%=movie.genres==="" ? "selected" : "" %> value="">Choose a genre</option>
+                        <option value="Action" <%=movie.genres==="Action" ? "selected" : "" %>>Action</option>
+                        <option value="Adventure" <%=movie.genres==="Adventure" ? "selected" : "" %>>Adventure</option>
+                        <option value="Comedy" <%=movie.genres==="Comedy" ? "selected" : "" %>>Comedy</option>
+                        <option value="Drama" <%=movie.genres==="Drama" ? "selected" : "" %>>Drama</option>
+                        <option value="Horror" <%=movie.genres==="Horror" ? "selected" : "" %>>Horror</option>
+                        <option value="Science Fiction" <%=movie.genres==="Science Fiction" ? "selected" : "" %>>Science
+                            Fiction</option>
+                        <option value="Fantasy" <%=movie.genres==="Fantasy" ? "selected" : "" %>>Fantasy</option>
+                        <option value="Thriller" <%=movie.genres==="Thriller" ? "selected" : "" %>>Thriller</option>
+                        <option value="Mystery" <%=movie.genres==="Mystery" ? "selected" : "" %>>Mystery</option>
+                        <option value="Romance" <%=movie.genres==="Romance" ? "selected" : "" %>>Romance</option>
+                        <option value="Crime" <%=movie.genres==="Crime" ? "selected" : "" %>>Crime</option>
+                        <option value="Historical" <%=movie.genres==="Historical" ? "selected" : "" %>>Historical
+                        </option>
+                        <option value="Western" <%=movie.genres==="Western" ? "selected" : "" %>>Western</option>
+                        <option value="Musical" <%=movie.genres==="Musical" ? "selected" : "" %>>Musical</option>
+                        <option value="Animation" <%=movie.genres==="Animation" ? "selected" : "" %>>Animation</option>
+                        <option value="Anime" <%=movie.genres==="Anime" ? "selected" : "" %>>Anime</option>
+                        <option value="Family" <%=movie.genres==="Family" ? "selected" : "" %>>Family</option>
+                        <option value="Documentary" <%=movie.genres==="Documentary" ? "selected" : "" %>>Documentary
+                        </option>
+                        <option value="War" <%=movie.genres==="War" ? "selected" : "" %>>War</option>
+                        <option value="Sports" <%=movie.genres==="Sports" ? "selected" : "" %>>Sports</option>
+                        <option value="Superhero" <%=movie.genres==="Superhero" ? "selected" : "" %>>Superhero</option>
+                    </select>
+
+                    <div class="valid-feedback">Looks Good!</div>
+                </div>
+                <label class="form-label mt-2">Current Content</label>
+                <div class="d-flex flex-wrap justify-content-between">
+                    <div style="position: relative; max-width: 240px;">
+                        <img src="<%= (movie.poster)? movie.poster.url:null %>" class="m-2 img-thumbnail" alt="">
+                    </div>
+                    <div style="position: relative; max-width: 240px;">
+                        <video id="video" controls>
+                            <source src="<%= (movie.video)? movie.video.url:null %>" type="video/mp4">
+                        </video>
+
+                    </div>
+
+                </div>
+
+
+                <div class="mb-3">
+                    <label for="image" class="form-label">Replace Poster</label>
+                    <div class="input-group mb-3">
+                        <input type="file" name="poster" id="image" class="form-control" required>
+                        <div class="valid-feedback">Looks Good!</div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="video" class="form-label">Replace Movie</label>
+                    <div class="input-group mb-3">
+                        <input type="file" name="video" id="video" class="form-control" required>
+                        <div class="valid-feedback">Looks Good!</div>
+                    </div>
+                </div>
+                <button class="btn btn-warning w-100" type="submit">Update</button>
+            </form>
+        </div>
+    </div>

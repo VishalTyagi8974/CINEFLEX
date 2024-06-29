@@ -1,0 +1,54 @@
+body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("https://res.cloudinary.com/dtgebpxfb/image/upload/v1719219910/Posters/backgroundForCineflex_dun7ii.png");
+    background-position: top;
+    background-size: cover;
+    background-color: black;
+    background-repeat: no-repeat;
+}
+
+#homeNav {
+    background-color: transparent;
+
+}
+
+
+#homeNav a {
+    color: #adb5bd;
+}
+
+
+
+section {
+    height: 93vh;
+    text-align: center;
+    color: white;
+}
+
+
+#homeNav .nav-link:hover {
+    color: white;
+    border-bottom: 1px solid white;
+}
+
+section div a:hover {
+    filter: brightness(150%);
+}
+
+body,
+p,
+a,
+form,
+button {
+    font-family: "Sunflower", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+
+
+h1,
+h5 {
+    font-family: "Sunflower", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}

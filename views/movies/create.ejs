@@ -1,0 +1,73 @@
+<% layout("layouts/boilerplate") %>
+    <div class="container-fluid">
+        <div class="row mt-3">
+            <h1 class="m-auto text-center">Release New Movie</h1>
+
+            <form action="/movies" class="my-4 col-md-6 offset-md-3 needs-validation p-4" id="createFormDiv"
+                method="post" enctype="multipart/form-data" novalidate>
+                <label for="title" class="form-label">Title</label>
+                <div class="mb-3">
+                    <input type="text" name="title" id="title" class="form-control" required>
+                    <div class="valid-feedback">Looks Good!</div>
+                </div>
+
+                <label for="description" class="form-label">Description</label>
+                <div class="mb-3">
+                    <textarea name="description" id="description" rows="4" class="form-control" required></textarea>
+                    <div class="valid-feedback">Looks Good!</div>
+                </div>
+                <div class="mb-3">
+                    <label for="description" for="ageRating" class="form-label">Age Rating</label>
+                    <select class="form-select" name="ageRating" id="ageRating" aria-label="Default select example">
+                        <option selected>Select Age Rating</option>
+                        <option value="U">U</option>
+                        <option value="UA">UA</option>
+                        <option value="A">A</option>
+                    </select>
+                    <div class="valid-feedback">Looks Good!</div>
+                </div>
+                <div class="mb-3">
+                    <label for="genres" class="form-label">Genre</label>
+                    <select class="form-select" id="genres" name="genres" aria-label="Default select example">
+                        <option selected>Choose a genre</option>
+                        <option value="Action">Action</option>
+                        <option value="Adventure">Adventure</option>
+                        <option value="Comedy">Comedy</option>
+                        <option value="Drama">Drama</option>
+                        <option value="Horror">Horror</option>
+                        <option value="Science Fiction">Science Fiction</option>
+                        <option value="Fantasy">Fantasy</option>
+                        <option value="Thriller">Thriller</option>
+                        <option value="Mystery">Mystery</option>
+                        <option value="Romance">Romance</option>
+                        <option value="Crime">Crime</option>
+                        <option value="Historical">Historical</option>
+                        <option value="Western">Western</option>
+                        <option value="Musical">Musical</option>
+                        <option value="Animation">Animation</option>
+                        <option value="Anime">Anime</option>
+                        <option value="Family">Family</option>
+                        <option value="Documentary">Documentary</option>
+                        <option value="War">War</option>
+                        <option value="Sports">Sports</option>
+                        <option value="Superhero">Superhero</option>
+                    </select>
+                    <div class="valid-feedback">Looks Good!</div>
+                </div>
+
+                <label for="image" class="form-label">Upload Poster</label>
+                <div class="input-group mb-3">
+                    <input type="file" name="poster" id="image" class="form-control" required>
+                    <div class="valid-feedback">Looks Good!</div>
+                </div>
+
+                <label for="video" class="form-label">Upload Movie</label>
+                <div class="input-group mb-3">
+                    <input type="file" name="video" id="video" class="form-control" required>
+                    <div class="valid-feedback">Looks Good!</div>
+                </div>
+
+                <button class="btn btn-danger w-100" type="submit">Upload</button>
+            </form>
+        </div>
+    </div>

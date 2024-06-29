@@ -1,0 +1,66 @@
+.container {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    padding: 0 50px;
+    /* Adjust padding to accommodate buttons */
+}
+
+.scroll-container {
+    overflow-x: scroll;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;
+    /* Internet Explorer 10+ */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.scroll-container::-webkit-scrollbar {
+    display: none;
+    /* Safari and Chrome */
+}
+
+.scroll-content img {
+    width: 200px;
+    height: auto;
+    margin: 0 10px;
+    border-radius: 10px;
+}
+
+.scroll-button {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: #fff;
+    font-size: 2rem;
+    padding: 10px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.scroll-button.left {
+    left: 0;
+}
+
+.scroll-button.right {
+    right: 0;
+}
+
+.scroll-button:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+
+h2 {
+    color: white;
+}
+
+.scroll-content a img:hover,
+.scroll-content a img:active {
+    border: 2px solid #ffb703;
+}

@@ -1,0 +1,17 @@
+<% layout('layouts/boilerplate') %>
+    <div class="container-fluid">
+        <p class="mb-0" style="color: white;"><i>Search results for</i></p>
+        <h1>
+            <%=searchedMovie %>
+        </h1>
+
+        <% if (movies.length===0){%>
+            <h2 style="color: white;">No Movies Found</h2>
+            <% } else{%>
+                <div class="container-fluid d-flex justify-content-center align-items-center flex-wrap">
+                    <% for (let movie of movies){%>
+                        <%- include("../partials/movieCard",{movie}) %>
+                            <% } %>
+                </div>
+                <% } %>
+    </div>
