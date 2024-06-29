@@ -16,7 +16,7 @@
         <% if (user.isProductionHouse){ %>
             <a class="btn btn-danger rounded-pill" href="/movies/new">Upload Movies</a>
             <% } else{%>
-                <form action="/users/<%=user._id %>/" method="post">
+                <form action="/users/<%=user._id %>" method="post">
                     <span>Registered as a Production House </span><button class=" ms-2 btn btn-success rounded-pill"
                         type="submit">Register</button>
                 </form>
