@@ -137,7 +137,7 @@ passport.deserializeUser(User.deserializeUser());
 passport.use(new GoogleStrategy({
     clientID: process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    callbackURL: "https://cineflex.onrender.com/auth/google/callback"
+    callbackURL: "https://cineflex-2-0.onrender.com/auth/google/callback"
 },
     async (token, tokenSecret, profile, done) => {
         try {
